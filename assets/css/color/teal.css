@@ -6,9 +6,18 @@
 @import '../syntax.css';
 @import '../variables.css';
 
-:root {
-  --accent: #77F2E6;
-  --background: color-mod(var(--accent) blend(#1D1E28 98%));
-  --color: white;
-  --border-color: rgba(255, 255, 255, .1);
-}
+:root,
+  :root.dark {
+    --accent: #59d8d8;
+    --background: color-mod(var(--accent) blend(#1D1E28 98%));
+    --color: white;
+    --border-color: rgba(255, 255, 255, .1);
+  }
+
+  :root.light {
+    --accent: #388E8E;
+    --background: color-mod(var(--accent) blend(#cfcfcf 98%));
+    --color: black;
+    --border-color: rgba(27, 27, 27, 0.1);
+  }
+

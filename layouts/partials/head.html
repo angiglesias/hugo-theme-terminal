@@ -10,9 +10,9 @@
 <!-- Theme CSS -->
 <link rel="stylesheet" href="{{ "assets/style.css" | absURL }}">
 {{ if (isset .Params "color") }}
-  <link rel="stylesheet" href="{{ (printf "assets/%s.css" .Params.color) | absURL }}">
+  <link rel="stylesheet" href="{{ (printf "assets/%s.css" (index (split .Params.color "-") 0)) | absURL }}">
 {{ else if and (ne $.Site.Params.ThemeColor "orange") (ne $.Site.Params.ThemeColor "color" "") }}
-  <link rel="stylesheet" href="{{ (printf "assets/%s.css" $.Site.Params.ThemeColor) | absURL }}">
+  <link rel="stylesheet" href="{{ (printf "assets/%s.css" (index ( split $.Site.Params.ThemeColor "-") 0)) | absURL }}">
 {{ end }}
 
 <!-- Custom CSS to override theme properties (/static/style.css) -->
